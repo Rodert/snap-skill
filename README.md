@@ -18,6 +18,24 @@ $snap-skill 一个女生从便利店出来，夜晚，9:16
 
 你只管说拍谁、在哪儿；动作、机位、遮挡、构图和少量成像瑕疵由 Skill 补全。明确指定的条件始终优先。生成提示词后，Skill 会识别当前会话实际可用的本地生图能力，并询问是否立即生成。
 
+## 效果预览
+
+<p align="center">
+  <img src="assets/gallery/stairwell-rail.png" alt="楼梯间扶手遮挡抓拍" width="31%">
+  <img src="assets/gallery/convenience-freezer.png" alt="便利店冰柜抓拍" width="31%">
+  <img src="assets/gallery/glasshouse-closeup.png" alt="玻璃花房自然人像" width="31%">
+</p>
+<p align="center">
+  <img src="assets/gallery/stairwell-overhead.png" alt="楼梯间高位抓拍" width="31%">
+  <img src="assets/gallery/stairwell-crop.png" alt="楼梯间局部遮挡抓拍" width="31%">
+  <img src="assets/gallery/convenience-low-angle.png" alt="便利店低机位抓拍" width="31%">
+</p>
+<p align="center">
+  <img src="assets/gallery/glasshouse-window.png" alt="玻璃花房窗边人像" width="31%">
+  <img src="assets/gallery/convenience-exit.png" alt="雨夜便利店出口抓拍" width="31%">
+  <img src="assets/gallery/convenience-rain.png" alt="便利店雨夜抓拍" width="31%">
+</p>
+
 ## 可以这样说
 
 ```text
