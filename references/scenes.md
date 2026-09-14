@@ -1,14 +1,14 @@
 # Scenes, Light And Occlusion
 
-将场景写成可被看见的真实空间，而不是笼统背景。用一个环境光源和一种合理遮挡即可。
+Write a visible, real space rather than a generic backdrop. One environmental light source and one plausible occlusion are usually enough.
 
-| 场景 | 环境光 | 合理遮挡 |
+| Scene | Environmental light | Plausible occlusion |
 | --- | --- | --- |
-| 便利店门口 | 冷白店灯、潮湿路面反光 | 自动门边缘、停靠的自行车、路人。 |
-| 雨天街头 | 阴天散射光、路灯倒影 | 雨伞、车窗水痕、路牌。 |
-| 老公寓楼梯间 | 窗边自然光、昏暗顶灯 | 扶手、门框、楼梯转角。 |
-| 咖啡馆 | 窗光、桌面反射 | 杯子、椅背、窗框。 |
-| 海边或旅行途中 | 硬日光、傍晚逆光 | 路牌、帽檐、经过的人群。 |
-| 夜间街道 | 路灯、招牌、车灯 | 汽车、树叶、玻璃反射。 |
+| Convenience-store entrance | Cool white store light and wet-pavement reflections | Automatic-door edge, parked bicycle, or passerby. |
+| Rainy street | Overcast diffuse light and streetlamp reflections | Umbrella, water-streaked car window, or sign. |
+| Old apartment stairwell | Window daylight and a weak ceiling lamp | Handrail, door frame, or stair corner. |
+| Cafe | Window light and tabletop reflection | Cup, chair back, or window frame. |
+| Beach or travel route | Hard daylight or late backlight | Road sign, hat brim, or passing crowd. |
+| Night street | Streetlamp, sign, and car light | Vehicle, leaves, or glass reflection. |
 
-让遮挡来自摄影者与人物之间真实存在的东西。遮挡可挡住部分脸、肩膀、手臂或身体边缘，但不要妨碍主体识别。
+Let occlusion come from something that genuinely exists between photographer and subject. It may hide part of a face, shoulder, arm, or body edge, but should not prevent the subject from being recognized.

@@ -27,6 +27,6 @@ $snap-skill Generate five prompt-only variations.
 $snap-skill Make it feel like a phone snapshot.
 ```
 
-The response follows the user's primary language unless another output language is requested. Every language uses the same photography rules; there are no duplicated language-specific skills. Asking for prompt-only output suppresses the generation follow-up.
+Users may write in any supported language. Every result includes matching Chinese and English prompts generated from the same photography plan; there are no duplicated language-specific skills. Asking for prompt-only output suppresses the generation follow-up.
 
 See [SKILL.md](SKILL.md) for the complete behavior.

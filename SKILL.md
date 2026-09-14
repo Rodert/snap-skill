@@ -1,71 +1,95 @@
 ---
 name: snap-skill
 description: >
-  Generate candid, spontaneous, natural-looking photography prompts and images.
-  用于生成抓拍、街拍、生活感摄影、自然人像、非摆拍照片。
-  Подходит для естественной, спонтанной и уличной фотографии.
-  自然なスナップ写真、街撮り、日常写真、偶然撮影風の写真に使用。
-  자연스러운 스냅 사진, 거리 사진, 일상 사진, 비연출 인물 사진에 사용.
-  Pour créer des photos spontanées, naturelles, prises sur le vif et de rue.
-  Para crear fotografía espontánea, natural, callejera y fotos no posadas.
+  A multilingual candid photography skill that transforms simple user ideas
+  into natural, spontaneous, non-posed photography prompts with realistic
+  camera positions, composition, lighting, foreground occlusion, and subtle
+  photographic imperfections.
 ---
 
 # Snap Skill
 
-将用户的简短描述写成可以直接交给图片生成模型的自然语言提示词，使画面像偶然被捕捉到的真实生活瞬间，而不是标准摆拍写真。
+## Goal
 
-## Language Behavior
+Transform a simple user description into a believable candid photograph. The image should feel like a real moment accidentally captured by a friend, partner, passerby, or photographer, rather than a deliberately posed AI portrait.
 
-识别用户请求的主要语言，并默认使用该语言回复和生成提示词。除非用户明确指定另一种输出语言，否则不要因为摄影术语常见于英语而切换语言；人名、品牌、相机型号和适合保留的摄影术语可维持原样。
+## Language Handling
 
-支持中文、English、Русский、日本語、한국어、Français 和 Español。用户混用语言时，使用请求中的主导语言；用户指定输出语言时，以该指定为准。多语言意图词和口语控制映射见 [`references/languages.md`](references/languages.md)。
+The user may communicate in any language. Prioritize support for Chinese, English, Japanese, Korean, Russian, French, and Spanish. Do not require the user to translate the request into English.
 
-## 工作方式
+Interpret every request with the English rules in this skill. For every generated photography prompt, always provide both a Chinese prompt and an English prompt. They must describe the same photograph; do not independently redesign the English version. Preserve names, brands, camera models, and terms where translation would reduce clarity.
 
-优先保留用户明确指定的主体、人物特征、场景、动作、画幅、服装、时间光线、焦段、风格和数量。不要替换已锁定条件。
+## Request Handling
 
-用户没有说明的条件，按场景自动补足动作状态、摄影者位置、前景遮挡、构图、焦段、环境光和少量成像缺陷。用户说“随机”时，仅随机未锁定的部分。
+Preserve explicit user constraints for subject, appearance, scene, action, aspect ratio, clothing, time, lighting, focal length, style, and quantity. Never replace a locked constraint. Complete only unspecified details. When the user asks for randomness, randomize only unlocked details.
 
-默认生成 1 组完整自然语言提示词，不解释组合过程或输出字段式分析。用户要求多组时，用 `### 01`、`### 02` 分隔。
+Default to one complete prompt pair. For multiple variations, use `### 01`, `### 02`, and so on. Do not explain the planning process or return field-by-field analysis.
 
-在输出提示词后，若用户没有要求“只要提示词”，也没有明确要求生成图片，则检查当前会话实际可用的本地生图工具或 Skill。简短列出已发现的能力，并用用户的主要语言询问是否现在生成；不要臆测、列出未安装的工具，或承诺尚未验证的能力。当前环境没有可用生图能力时，不显示此询问。
+After returning prompts, when the user has not asked for prompt-only output or directly requested image generation, inspect the image-generation tools or skills actually available in the current session. Briefly list only the capabilities found and ask, in the user's primary language, whether to generate now. Do not claim unavailable tools. Do not add this follow-up for prompt-only requests.
 
-用户只要提示词时不要生成图片，也不要追加生图询问。用户明确要求生成图片且当前环境有合适工具时，直接生成；若工具需要额外配置或授权，在开始前清楚说明。
+When the user explicitly requests image generation and an appropriate tool is available, generate the image. If the tool requires configuration or authorization, state that requirement before starting.
 
-## 画面规则
+## Candid Photography Rules
 
-1. 表现未完成的生活动作，而不是完成后的模特姿势。例如推门、跨台阶、收伞、低头找东西、喝水后回头或边走边整理头发。
-2. 建立可信的摄影者位置，例如门框后、栏杆缝隙间、桌子另一侧、汽车玻璃后、楼梯上方或边走边拍。机位必须符合空间关系。
-3. 默认加入一种自然前景或局部遮挡，如门框、树叶、栏杆、路人、玻璃反射、椅背、雨伞或建筑边缘。允许人物局部被遮挡或切出画面。
-4. 优先非标准构图：偏离中心、不对称、大面积环境、边缘裁切、轻微倾斜或人物即将离开画面。
-5. 每张图挑选 1 到 3 种不破坏人物结构的轻微缺陷，例如运动模糊、局部失焦、颗粒、CCD 噪点、高光轻溢出、眩光、反射、轻微过曝或边缘裁切。
+1. Prefer a mid-action moment over a completed pose: opening a door, stepping down, putting down a cup, fixing clothing, looking for something, or reacting to an off-frame sound.
+2. Give the photographer a physically plausible position. Camera height, distance, focal length, foreground, and composition must follow from the real spatial relationship.
+3. Use one natural foreground occlusion by default, such as a door frame, leaves, railing, passerby, glass reflection, chair back, umbrella, vehicle, or architectural edge. Partial face or body occlusion is acceptable when the subject remains readable.
+4. Prefer imperfect, off-center framing: a subject near an edge, leaving the frame, a large environmental area, asymmetry, a modest tilt, or an intentional crop.
+5. Use only one to three subtle imperfections per image, such as motion blur, localized softness, grain, CCD noise, restrained highlight bloom, reflection, flare, slight overexposure, or edge cropping. Imperfections must not break anatomy or scene readability.
 
-人物默认不看镜头，优先看向画外、低头、回头、走神、说话或正在做事。使用真实环境光，避免默认棚拍、商业写真、塑料皮肤、HDR、CGI 感和全身完整展示。
+The subject should normally look away from the camera, be occupied with an action, or react naturally to the surroundings. Prefer environmental lighting, natural skin, real fabric, real perspective, and believable spatial depth. Avoid studio lighting, commercial posing, plastic skin, HDR, CGI character rendering, and full-body catalog presentation.
 
-## 摄影选择
+## Photography Coherence
 
-根据场景选择单一合理焦段。35mm 是街拍、旅行和日常生活的默认选择；24--28mm 用于近距离、狭窄空间和明显透视；50mm 用于室内与自然观察；85--135mm 用于街对面或远距离观察。不要在同一张图片中混用冲突的焦段和透视描述。
+Think like a photographer, not a random prompt generator. Choose the lens, camera distance, camera height, foreground, lighting, and composition as one coherent setup. Before finalizing, check:
 
-## 明度与氛围控制
+- Where is the photographer physically standing?
+- Why is the camera at this height?
+- Is the focal length plausible at this distance?
+- What object can naturally appear in the foreground?
+- What light source actually exists in this environment?
 
-抓拍感不等于暗调纪实风。除非用户明确要求雨夜、黄昏、低曝光、情绪暗调、压抑氛围或电影化暗色风格，否则默认优先生成明亮或中性曝光的生活抓拍画面。
+Use one plausible focal-length setup. Default to 35mm for street, travel, and everyday scenes; use 24--28mm for close range, tight spaces, or strong perspective; use 50mm for indoor observation and half-length portraits; use 85--135mm for distant observation across a street or open public space. Do not combine contradictory focal lengths or perspective cues.
 
-对于便利店、泳池、海边、白墙建筑、玻璃花房、自助洗衣店、自动贩卖机等天然具有较强环境光源或清爽生活感的场景，优先保留清晰明亮的主体曝光、干净的白色区域、通透的皮肤质感和清爽克制的配色，不要把整体画面压成昏暗色调。
+## Exposure and Mood
 
-“韩国 INS”“生活抓拍”“朋友随手拍”“CCD 快照”“便利店场景”可以是明亮、冷白、轻盈、清爽的，不必默认做成深灰、低饱和、重情绪暗色画面。
+Candid photography does not imply dark, moody, or underexposed imagery. Default to bright or neutral exposure unless the user explicitly requests a dark, moody, rainy-night, cinematic, low-key, or underexposed look.
 
-按需读取以下参考资料，不必同时读取全部：
+Bright environments such as convenience stores, supermarkets, swimming pools, beaches, white architecture, glass houses, laundromats, vending-machine areas, and sunny streets should generally remain clean, fresh, and well exposed. Preserve luminous skin tones, clean whites, and realistic environmental light. Do not automatically turn Korean INS photography, CCD snapshots, street photography, or candid photography into dark gray, desaturated imagery.
 
-- 场景、光线和遮挡：[`references/scenes.md`](references/scenes.md)
-- 动作与瞬间：[`references/moments.md`](references/moments.md)
-- 镜头、机位和构图：[`references/photography.md`](references/photography.md)
-- 成像质感与口语调整：[`references/styles.md`](references/styles.md)
+## Output Format
 
-## 口语控制
+For every result, provide the same image description in both languages:
 
-- “固定人物”或“固定场景”：对应内容不得改变，其余条件可变化。
-- “更野一点”：增强非常规机位、遮挡和非标准构图，但保留可读的主体与空间关系。
-- “更真实”：降低造型感，增加自然生活动作和少量摄影缺陷。
-- “更像路人拍的”或“更像手机拍的”：使用便携设备视角、自然曝光和轻微运动痕迹。
-- “女友感”：使用熟人距离和自然互动，不强化远距离观察。
-- “偷拍感”或“狗仔拍的”：只作为虚构、知情同意的视觉风格处理；可使用远距离观察、遮挡和长焦构图，不提供现实侵犯隐私或非自愿拍摄的建议。
+```md
+### 01
+
+**Chinese**
+
+<Chinese prompt>
+
+**English**
+
+<English prompt>
+```
+
+The two prompts must match in subject, clothing, action, expression, scene, focal length, camera position, composition, foreground, lighting, color palette, imperfections, and overall mood. Do not shorten the English version or introduce visual elements absent from the Chinese version.
+
+Read only the reference that applies to the request:
+
+- Scene, environmental light, and occlusion: [`references/scenes.md`](references/scenes.md)
+- Mid-action moments: [`references/moments.md`](references/moments.md)
+- Camera placement, lenses, and composition: [`references/photography.md`](references/photography.md)
+- Texture and style adjustments: [`references/styles.md`](references/styles.md)
+- Output-pair examples: [`references/examples.md`](references/examples.md)
+
+## Colloquial Adjustments
+
+Interpret expressions such as “more raw,” “more natural,” “phone snapshot,” “film look,” and their equivalents in the user's language as adjustments to the same internal photography rules. Keep all explicit constraints intact.
+
+- “More raw”: bolder framing, more plausible occlusion, less eye contact, and slight movement.
+- “More natural”: less styling, more everyday action, and one small imperfection.
+- “Phone snapshot”: 24--35mm portable-device perspective, automatic-exposure character, and restrained digital noise.
+- “Film look”: restrained grain, gentle highlight behavior, and no heavy preset effect.
+- “Girlfriend perspective”: familiar distance and natural interaction, not distant observation.
+- “Paparazzi style” or “spy-camera feel”: treat only as a fictional, consent-based visual style using distant observation, occlusion, and telephoto framing. Do not provide advice for real-world privacy invasion or non-consensual photography.

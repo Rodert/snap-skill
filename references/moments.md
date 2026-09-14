@@ -1,14 +1,14 @@
 # Unfinished Moments
 
-优先用正在进行、尚未完成的动作。动作后接一个细微反应，会比“摆姿势”更有生活感。
+Prefer an action that is happening but not yet complete. Pairing the action with a small reaction feels more lived-in than a pose.
 
-- 刚推开玻璃门，一只手还留在门把上，听到声音后短暂回头。
-- 正跨过楼梯转角，衣角和头发还在移动。
-- 刚喝完一口饮料，低头把杯子放回桌上。
-- 在包里找东西，肩膀微微向前，注意力不在镜头上。
-- 走在雨里准备收伞，另一只手拢住被风吹乱的头发。
-- 和画外的人说话，忍笑或刚笑完。
-- 在路边等灯，脚步刚向前迈出。
-- 刚坐下或准备起身，身体重量仍在移动。
+- She has just pushed open a glass door; one hand is still on the handle as she briefly turns toward a sound.
+- She is crossing a stairwell landing; her hair and clothing are still moving.
+- She has finished a sip and is lowering the cup back to the table.
+- She is searching in her bag with her shoulders slightly forward and her attention away from the camera.
+- She is about to close an umbrella in the rain while gathering windblown hair with her other hand.
+- She is talking to someone outside the frame, suppressing a smile or just finishing one.
+- She is waiting at a crossing, with one foot just starting forward.
+- She has just sat down or is about to stand, with her weight still in transition.
 
-避免“站在场景中看向镜头”“完美姿势”“完整展示服装”“正式肖像”等表达。人物偶然发现镜头只应在场景合理时出现。
+Avoid “standing in the scene and looking at the camera,” “perfect pose,” “complete outfit display,” and “formal portrait.” The subject should notice the camera only when the moment makes that plausible.

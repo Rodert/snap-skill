@@ -1,14 +1,14 @@
 # Texture And Style Adjustments
 
-画面质感应服务于真实摄影，而不是作为滤镜清单。每张图只保留 1 至 3 个轻微瑕疵。
+Texture should serve believable photography rather than read as a filter list. Keep only one to three subtle imperfections per image.
 
-| 用户说法 | 调整方向 |
+| User intent | Direction |
 | --- | --- |
-| 更真实 | 普通衣着和生活动作，减少精修与刻意造型，加入一项轻微成像缺陷。 |
-| 更野一点 | 更偏的机位、更多空间遮挡、局部裁切和较强环境感。 |
-| 更像路人拍的 | 35mm 左右、边走边拍、构图稍迟、轻微运动模糊。 |
-| 更像手机拍的 | 24--35mm、自动曝光、自然锐化或轻微数码噪点，不模拟专业影棚。 |
-| CCD 感 | 直闪或弱闪光、少量数码噪点、略偏冷的色彩与普通快照曝光。 |
-| 胶片感 | 自然颗粒、柔和高光与有限的色彩偏移，避免厚重预设感。 |
+| More natural | Everyday clothing and action, less retouching and styling, plus one small imaging flaw. |
+| More raw | More off-axis camera placement, stronger spatial occlusion, a partial crop, and more environmental presence. |
+| More like a passerby took it | About 35mm, walking while shooting, slightly late framing, and light motion blur. |
+| More like a phone snapshot | 24--35mm, automatic exposure, natural sharpening or slight digital noise, never a professional studio look. |
+| CCD feel | Direct or weak flash, a small amount of digital noise, slightly cool color, and ordinary snapshot exposure. |
+| Film look | Natural grain, gentle highlights, and limited color drift, without a heavy preset look. |
 
-始终优先真实皮肤、织物、头发、透视与空间关系。避免塑料皮肤、过度磨皮、HDR、CGI 感、商业棚拍语言和“完美构图”。
+Always prioritize realistic skin, fabric, hair, perspective, and spatial relationships. Avoid plastic skin, aggressive retouching, HDR, CGI polish, commercial studio language, and “perfect composition.”

@@ -1,14 +1,14 @@
 # Camera And Composition
 
-选择一个与场景匹配的摄影者位置，再决定焦段和构图。
+Choose a photographer position that fits the scene before selecting focal length and composition.
 
-| 情境 | 建议 |
+| Situation | Direction |
 | --- | --- |
-| 街边、便利店、旅行途中 | 35mm，摄影者在同行或路边稍后的位置，人物偏离中心。 |
-| 房间、楼梯、车内等狭窄空间 | 24--28mm，利用门框、扶手或桌面作为前景。 |
-| 咖啡馆、室内日常 | 50mm，从桌子另一侧、椅背或窗边观察。 |
-| 街道另一侧或开阔公共空间 | 85--135mm，远距离压缩透视，用车辆、树叶或行人形成层次。 |
+| Street, convenience store, or travel | 35mm; photographer is walking alongside or a short distance behind; subject is off-center. |
+| Tight room, stairwell, or car | 24--28mm; use a door frame, handrail, or tabletop as foreground. |
+| Cafe or indoor daily life | 50mm; observe from across a table, behind a chair, or near a window. |
+| Across a street or in open public space | 85--135mm; use distant compression and layer the scene with vehicles, leaves, or passersby. |
 
-不要写抽象的“低机位”或“高机位”而没有空间依据。可以描述为“从楼梯上方俯拍”“隔着车窗拍摄”“相机刚从腰间抬起”“从门缝看过去”。
+Do not use abstract “low angle” or “high angle” labels without spatial justification. Describe a real position instead: looking down from the stair landing, shooting through a car window, lifting the camera from waist height, or looking through a doorway gap.
 
-每张画面优先选择一种构图变化：人物靠边、前景占据大面积、身体局部被裁切、建筑线条分割画面、人物走向画外或轻微倾斜。不要同时塞入过多构图技巧。
+Choose one primary compositional variation per image: subject near an edge, large foreground area, partial body crop, architecture dividing the frame, subject walking out of frame, or a modest tilt. Do not stack every technique into one image.
