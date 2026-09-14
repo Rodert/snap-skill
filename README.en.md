@@ -16,7 +16,7 @@ Supported languages: Chinese, English, Japanese, Korean, Russian, French, and Sp
 $snap-skill A woman has just walked out of a convenience store after the rain, 9:16
 ```
 
-State who and where; Snap Skill fills in the action, camera position, composition, lighting, and one to three subtle imperfections. Explicit user constraints always win.
+State who and where; Snap Skill fills in the action, camera position, composition, lighting, and one to three subtle imperfections. Explicit user constraints always win. After returning a prompt, it can list the image-generation capabilities actually available in the current session and ask whether to generate now.
 
 ## Natural-language controls
 
@@ -27,6 +27,6 @@ $snap-skill Generate five prompt-only variations.
 $snap-skill Make it feel like a phone snapshot.
 ```
 
-The response follows the user's primary language unless another output language is requested. Every language uses the same photography rules; there are no duplicated language-specific skills.
+The response follows the user's primary language unless another output language is requested. Every language uses the same photography rules; there are no duplicated language-specific skills. Asking for prompt-only output suppresses the generation follow-up.
 
 See [SKILL.md](SKILL.md) for the complete behavior.
