@@ -18,6 +18,36 @@ $snap-skill 一个女生从便利店出来，夜晚，9:16
 
 你只管说拍谁、在哪儿；动作、机位、遮挡、构图和少量成像瑕疵由 Skill 补全。明确指定的条件始终优先。生成提示词后，Skill 会识别当前会话实际可用的本地生图能力，并询问是否立即生成。
 
+## 安装
+
+### 直接复制给 Agent
+
+将下面整段发送给 Codex Cloud、Claude Code、Work Buddy 或任何支持 Skill 的 Agent：
+
+```text
+Install the Snap Skill from https://github.com/Rodert/snap-skill.
+
+Use your supported skill-installation workflow to install the repository as `snap-skill`. Keep the repository directory intact, including SKILL.md, references/, and assets/. Enable the skill for this workspace or session, then confirm that it can be invoked with:
+
+$snap-skill 一个女生从便利店出来，夜晚，9:16
+```
+
+### 本地安装
+
+**Codex**
+
+```bash
+git clone https://github.com/Rodert/snap-skill.git ~/.codex/skills/snap-skill
+```
+
+**Claude Code**
+
+```bash
+git clone https://github.com/Rodert/snap-skill.git ~/.claude/skills/snap-skill
+```
+
+安装后重启 Agent 或开启新会话，再使用 `$snap-skill` 调用。若 Agent 使用其他 Skill 目录，请让它按上方“直接复制给 Agent”的指令完成安装。
+
 ## 效果预览
 
 <p align="center">

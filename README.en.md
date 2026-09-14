@@ -18,6 +18,36 @@ $snap-skill A woman has just walked out of a convenience store after the rain, 9
 
 State who and where; Snap Skill fills in the action, camera position, composition, lighting, and one to three subtle imperfections. Explicit user constraints always win. After returning a prompt, it can list the image-generation capabilities actually available in the current session and ask whether to generate now.
 
+## Install
+
+### Paste This Into Your Agent
+
+Send the following block to Codex Cloud, Claude Code, Work Buddy, or any Skill-capable agent:
+
+```text
+Install the Snap Skill from https://github.com/Rodert/snap-skill.
+
+Use your supported skill-installation workflow to install the repository as `snap-skill`. Keep the repository directory intact, including SKILL.md, references/, and assets/. Enable the skill for this workspace or session, then confirm that it can be invoked with:
+
+$snap-skill A woman has just walked out of a convenience store at night, 9:16
+```
+
+### Local Installation
+
+**Codex**
+
+```bash
+git clone https://github.com/Rodert/snap-skill.git ~/.codex/skills/snap-skill
+```
+
+**Claude Code**
+
+```bash
+git clone https://github.com/Rodert/snap-skill.git ~/.claude/skills/snap-skill
+```
+
+Restart the agent or begin a new session after installation, then invoke `$snap-skill`. For any other skill directory, use the paste-in instruction above and let the agent use its supported installation flow.
+
 ## Preview Gallery
 
 <p align="center">
